@@ -100,4 +100,30 @@ public class StudentDao {
 		
 		
 	}
+
+	public static boolean updateStudents(Student st) {
+		int i=0;
+		boolean f = false;
+		try {
+			Connection con = CP.createC();
+			String q="UPDATE students SET sname=? WHERE sid=?";
+			PreparedStatement pst = con.prepareStatement(q);
+			
+			pst.setString(1, st.getStudentName());
+			pst.setInt(i, st.getStudentId());
+			i = pst.executeUpdate();
+			
+            f=true;
+			
+			
+		} catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return f;
+			
+	
+		}
+	
 }
+
