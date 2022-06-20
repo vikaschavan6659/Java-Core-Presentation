@@ -13,7 +13,8 @@ public class start {
 				System.out.println("Press 1 to add student");
 				System.out.println("Press 2 to delete the student");
 				System.out.println("Press 3 to display the student");
-				System.out.println("Press 4 to exit");
+				System.out.println("Press 4 to udate the student");
+				System.out.println("Press 5 to exit");
 				int c = Integer.parseInt(br.readLine());
 				
 				if(c==1)
@@ -64,10 +65,32 @@ public class start {
 				}
 				else if(c==4)
 				{
-					//exit
-					break;
-				} else {
+					System.out.println("Enter user name : ");
+					String name = br.readLine();
 					
+					System.out.println("Enter user id : ");
+					Integer id = br.read();
+					
+					Student st1 = new Student();
+				    //int first_value = Integer.parseInt(br.readLine());
+					boolean st = StudentDao.updateStudents(st1);
+					
+					// f= StudentDao.updateStudents(answer);
+					
+					
+					/*if(answer) 
+					{
+						System.out.println("Student is successfully udate...");
+					}else
+					{
+						System.out.println("something went wrong..");
+					}
+					
+					System.out.println(st);*/
+					
+				} else if(c==5)
+				{
+					break;
 				}
 			}
 			System.out.println("Thank you for using this application");
